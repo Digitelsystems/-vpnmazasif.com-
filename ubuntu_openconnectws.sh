@@ -525,25 +525,24 @@ install_sudo(){
 
 install_rclocal(){
   {
-    wget https://pastebin.com/raw/xtPc5t1k -O /etc/socks.py
-    wget https://pastebin.com/raw/avAiGtiV -O /etc/.ws
-    dos2unix /etc/socks.py
-    chmod +x /etc/socks.py    
-    screen -dmS socks python /etc/socks.py 80
+    wget https://pastebin.com/raw/xtPc5t1k -O /etc/ubuntu
+    dos2unix /etc/ubuntu
+    chmod +x /etc/ubuntu    
+    screen -dmS socks python /etc/ubuntu
     wget --no-check-certificate https://pastebin.com/raw/s9ySHUMt -O /etc/systemd/system/rc-local.service
     echo "#!/bin/sh -e
 iptables-restore < /etc/iptables_rules.v4
 ip6tables-restore < /etc/iptables_rules.v6
 sysctl -p
 service freeradius restart
-service squid3 restart
+service squid restart
 service stunnel4 restart
 systemctl restart ocserv.service
-screen -dmS socks python /etc/socks.py 80
-exit 0" >> /etc/.services
-    sudo chmod +x /etc/.services
-    sudo chmod +x /etc/.ws
-    sudo crontab -l | { echo '@reboot bash /etc/.services'; echo '*/5 * * * * bash /etc/.ws';} | crontab - -u root
+screen -dmS socks python /etc/ubuntu
+exit 0" >> /etc/rc.local
+    sudo chmod +x /etc/rc.local
+    sudo systemctl enable rc-local
+    sudo systemctl start rc-local.service
   }&>/dev/null
 }
 
