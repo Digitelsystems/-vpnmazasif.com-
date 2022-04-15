@@ -4,7 +4,7 @@ cp /usr/share/zoneinfo/Asia/Dubai /etc/localtime
 #Database Details
 db_host='173.82.65.242';
 db_user='vpnmazasif_vpnmazasif';
-db_pass='Qd)4xBWMAT{j';
+db_pass='@@Orangevpn123';
 db_name='vpnmazasif_vpnmazasif';
 
 install_require()
