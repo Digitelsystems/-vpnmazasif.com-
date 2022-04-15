@@ -3,7 +3,7 @@ cp /usr/share/zoneinfo/Asia/Riyadh /etc/localtime
 #Database Details
 HOST='173.82.65.242';
 USER='vpnmazasif_vpnmazasif';
-PASS='Qd)4xBWMAT{j';
+PASS='@@Orangevpn123';
 DBNAME='vpnmazasif_vpnmazasif';
 
 install_require()
